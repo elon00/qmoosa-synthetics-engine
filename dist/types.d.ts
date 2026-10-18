@@ -29,6 +29,12 @@ export interface ExchangeQuote {
     feeUsd: bigint;
     effectiveRateWad: bigint;
 }
+export interface LiquidationQuote {
+    targetUser: string;
+    debtToCover: bigint;
+    collateralToSeize: bigint;
+    badDebtShortfall: bigint;
+}
 export type AdminActionType = "SET_ORACLE_PRICE" | "OVERRIDE_ORACLE_PRICE" | "REGISTER_SYNTH" | "SET_MIN_COLLATERAL_RATIO" | "SET_EXCHANGE_FEE";
 export interface SignedAdminIntent {
     action: AdminActionType;
