@@ -1,0 +1,38 @@
+import { SynthConfig, StakerPosition, SignedAdminIntent, SyntheticsOperationResult, OraclePriceFeed } from "./types.js";
+export declare class SyntheticsEngine {
+    readonly synths: Map<string, SynthConfig>;
+    readonly oracleFeeds: Map<string, OraclePriceFeed>;
+    readonly stakedCollateral: Map<string, bigint>;
+    readonly userDebtShares: Map<string, bigint>;
+    readonly userSynthBalances: Map<string, Map<string, bigint>>;
+    readonly userCollateralBalances: Map<string, bigint>;
+    totalDebtShares: bigint;
+    minCollateralRatioBps: bigint;
+    liquidationPenaltyBps: bigint;
+    exchangeFeeBps: bigint;
+    maxOracleStaleness: number;
+    maxPriceDeviationBps: bigint;
+    protocolBadDebt: bigint;
+    collateralDecimals: number;
+    private readonly authManager;
+    private readonly chainId;
+    constructor(adminPublicKey: string, chainId?: number);
+    registerSynthDirect(currencyKey: string, name: string, symbol: string): void;
+    setOraclePriceDirect(currencyKey: string, priceWad: bigint, updatedAt?: number, bypassDeviationCheck?: boolean): void;
+    overrideOraclePriceDirect(currencyKey: string, priceWad: bigint): void;
+    getOraclePrice(currencyKey: string): bigint;
+    setUserCollateralBalance(user: string, balance: bigint): void;
+    getUserCollateralBalance(user: string): bigint;
+    getUserSynthBalance(user: string, currencyKey: string): bigint;
+    setUserSynthBalance(user: string, currencyKey: string, balance: bigint): void;
+    executeAdminIntent(intent: SignedAdminIntent): void;
+    stakeCollateral(user: string, amount: bigint): SyntheticsOperationResult;
+    unstakeCollateral(user: string, amount: bigint): SyntheticsOperationResult;
+    issueSynths(user: string, susdAmount: bigint): SyntheticsOperationResult;
+    burnSynths(user: string, susdAmount: bigint): SyntheticsOperationResult;
+    exchange(user: string, sourceKey: string, sourceAmount: bigint, destKey: string): SyntheticsOperationResult;
+    liquidate(liquidator: string, user: string, debtToCover: bigint): SyntheticsOperationResult;
+    totalGlobalDebtValue(): bigint;
+    calculateUserDebtValue(user: string): bigint;
+    getStakerPosition(user: string): StakerPosition;
+}

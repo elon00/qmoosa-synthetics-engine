@@ -1,0 +1,27 @@
+{
+  "name": "@qmoosa/synthetics-engine",
+  "version": "1.0.0",
+  "description": "QMOOSA Synthetics Engine — Pooled Debt Ledger, Dynamic Shares State Machine & Zero-Slippage Matching",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test tests/engine.test.mjs",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "keywords": [
+    "qmoosa",
+    "synthetics",
+    "engine",
+    "pooled-debt",
+    "ed25519",
+    "defi"
+  ],
+  "author": "elon00",
+  "license": "MIT"
+}
