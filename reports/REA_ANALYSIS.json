@@ -1,0 +1,83 @@
+{
+  "engine": "REA_Reverse_Engineer_Anything",
+  "status": "STRUCTURE_RECONSTRUCTED",
+  "analyzed_files": 25,
+  "manifest": {
+    "package-lock.json": {
+      "bytes": 1534
+    },
+    "package.json": {
+      "bytes": 664
+    },
+    "qmoosa-synthetics-engine-1.0.0.tgz": {
+      "bytes": 12966
+    },
+    "tsconfig.json": {
+      "bytes": 352
+    },
+    "dist\\auth.d.ts": {
+      "bytes": 866
+    },
+    "dist\\auth.js": {
+      "bytes": 3295
+    },
+    "dist\\engine.d.ts": {
+      "bytes": 2226
+    },
+    "dist\\engine.js": {
+      "bytes": 15599
+    },
+    "dist\\index.d.ts": {
+      "bytes": 87
+    },
+    "dist\\index.js": {
+      "bytes": 87
+    },
+    "dist\\math.d.ts": {
+      "bytes": 1148
+    },
+    "dist\\math.js": {
+      "bytes": 4229
+    },
+    "dist\\types.d.ts": {
+      "bytes": 1498
+    },
+    "dist\\types.js": {
+      "bytes": 28
+    },
+    "scripts\\rea_inspector.py": {
+      "bytes": 1485
+    },
+    "scripts\\rsi_engine.py": {
+      "bytes": 2039
+    },
+    "src\\auth.ts": {
+      "bytes": 3653
+    },
+    "src\\engine.ts": {
+      "bytes": 15404
+    },
+    "src\\index.ts": {
+      "bytes": 87
+    },
+    "src\\math.ts": {
+      "bytes": 4513
+    },
+    "src\\types.ts": {
+      "bytes": 1455
+    },
+    "tests\\engine.test.mjs": {
+      "bytes": 5811
+    },
+    "tests\\reality_check_harness.py": {
+      "bytes": 1250
+    },
+    ".github\\workflows\\ci.yml": {
+      "bytes": 612
+    },
+    ".github\\workflows\\qmoosa-rsi-rea-sync.yml": {
+      "bytes": 531
+    }
+  },
+  "timestamp": 1794026556
+}
